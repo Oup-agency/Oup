@@ -1,86 +1,28 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Logo from './Logo';
-
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsOpen(false);
-  };
-
-  const handleNavigation = (sectionId: string) => {
-    if (location.pathname === '/') {
-      scrollToSection(sectionId);
-    } else {
-      window.location.href = `/#${sectionId}`;
-    }
-  };
-
   return (
-    <nav className="fixed w-full bg-[#0A0A0F]/80 backdrop-blur-lg z-50 py-2">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <Logo />
-          </Link>
+    <nav className="fixed top-0 w-full bg-[#0A0A0F]/90 backdrop-blur-lg z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 text-sm">
-            <button onClick={() => handleNavigation('about')} className="hover:text-purple-500 transition-colors">About</button>
-            <button onClick={() => handleNavigation('services')} className="hover:text-purple-500 transition-colors">Services</button>
-            <button onClick={() => handleNavigation('process')} className="hover:text-purple-500 transition-colors">Process</button>
-            <button onClick={() => handleNavigation('team')} className="hover:text-purple-500 transition-colors">Team</button>
-            <button onClick={() => handleNavigation('faq')} className="hover:text-purple-500 transition-colors">FAQ</button>
-
-            <Link
-              to="/book-call"
-              className="bg-purple-600 hover:bg-purple-700 px-5 py-1.5 rounded-full transition-colors text-sm"
-            >
-              Book a Demo
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-              />
-            </svg>
-          </button>
-
+        {/* ---- Left: Logo ---- */}
+        <div className="text-white font-semibold tracking-wide text-2xl">
+          OUP
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden mt-3">
-            <div className="flex flex-col space-y-4">
-              <button onClick={() => handleNavigation('about')} className="hover:text-purple-500 transition-colors">About</button>
-              <button onClick={() => handleNavigation('services')} className="hover:text-purple-500 transition-colors">Services</button>
-              <button onClick={() => handleNavigation('process')} className="hover:text-purple-500 transition-colors">Process</button>
-              <button onClick={() => handleNavigation('team')} className="hover:text-purple-500 transition-colors">Team</button>
-              <button onClick={() => handleNavigation('faq')} className="hover:text-purple-500 transition-colors">FAQ</button>
+        {/* ---- Centered NAV LINKS ---- */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-12 text-white text-lg font-medium">
+          <a href="#home" className="hover:text-gray-300">Home</a>
+          <a href="#services" className="hover:text-gray-300">Services</a>
+          <a href="#about" className="hover:text-gray-300">About</a>
+          <a href="#contact" className="hover:text-gray-300">Contact</a>
+        </div>
 
-              <Link
-                to="/book-call"
-                className="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-full transition-colors text-center"
-              >
-                Book a Demo
-              </Link>
-            </div>
-          </div>
-        )}
+        {/* ---- Right: Book a Call ---- */}
+        <a 
+          href="book-call" 
+          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition"
+        >
+          Book a Call
+        </a>
 
       </div>
     </nav>
