@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Mail, Share2, FileText, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 interface ServiceCardProps {
   title: string;
   description: string;
@@ -13,6 +14,8 @@ const icons = {
   Share2,
   FileText
 };
+
+
 
 export default function ServiceCard({ title, description, icon }: ServiceCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);

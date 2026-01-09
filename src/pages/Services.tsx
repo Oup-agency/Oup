@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Share2, FileText, BarChart, Target, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import servicess from "../components/images/servicess.png";
+import servicesnew from '../components/images/services.png'
 
 export default function Services() {
   return (
@@ -16,7 +16,7 @@ export default function Services() {
           >
             {/* IMAGE */}
             <img
-              src={servicess}
+              src={servicesnew}
               alt="Marketing Services"
               className="w-full max-w-4xl mx-auto mb-12 rounded-xl shadow-xl border border-purple-500/20"
             />
