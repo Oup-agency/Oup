@@ -9,7 +9,9 @@ import ceo from '../pages/images/founder.jpeg'
 import behruz from '../pages/images/behruz.jpeg'
 import mutalibov from '../pages/images/mutalibov.jpeg'
 import samandar from './samandar.png'
-
+import card1 from '../components/images/card1.png'
+import card2 from '../components/images/card2.png'
+import card3 from '../components/images/card3.png'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -256,133 +258,72 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-4 bg-gradient-to-br from-[#0A0A0F] via-[#0F0F17] to-[#0A0A0F] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072')] opacity-5 mix-blend-overlay" />
-        
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+      <section id="services" className="py-20 px-4 bg-[#0F0F17]">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-4xl font-bold text-center mb-16">
+      Our Core Services
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-8">
+
+      {/* SERVICE 1 */}
+      <motion.div className="bg-[#0A0A0F] rounded-xl border border-gray-800 overflow-hidden">
+        <img
+          src={card1}
+          alt="Performance Marketing"
+          className="w-full h-56 object-cover"
+        />
+        <div className="p-8">
+          <Target className="text-purple-500 w-10 h-10 mb-4" />
+          <h3 className="text-2xl font-bold mb-4">
+            Performance Marketing
+          </h3>
+          <FeatureItem>Lower CAC using AI optimization</FeatureItem>
+          <FeatureItem>High-converting funnels</FeatureItem>
+          <FeatureItem>Audience segmentation</FeatureItem>
         </div>
+      </motion.div>
 
-        <div className="max-w-7xl mx-auto relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <span className="inline-block px-4 py-1 bg-purple-500/10 rounded-full text-purple-400 text-sm font-medium mb-4">
-              Our Services
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Comprehensive Solutions for
-              <span className="block bg-gradient-to-r from-purple-400 via-purple-500 to-blue-500 text-transparent bg-clip-text">
-                E-commerce Growth
-              </span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              We combine cutting-edge AI technology with proven marketing strategies to deliver 
-              exceptional results for fitness brands.
-            </p>
-          </motion.div>
-
-          <div className="space-y-8">
-            {/* Performance Marketing */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
-              <div className="relative bg-[#0A0A0F] p-8 rounded-lg border border-gray-800 group-hover:border-purple-500 transition-all duration-300">
-                <Target className="h-12 w-12 text-purple-500 mb-6" />
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-purple-400 transition-colors">Performance-Driven Growth for E-Commerce</h3>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4 text-purple-400">Audience Profiling & Segmentation</h4>
-                    <div className="space-y-2">
-                      <FeatureItem>Identify highest-value customers through data analysis</FeatureItem>
-                      <FeatureItem>Build custom and lookalike audiences</FeatureItem>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4 text-purple-400">CAC Reduction & Optimization</h4>
-                    <div className="space-y-2">
-                      <FeatureItem>Advanced A/B testing for lower ad costs</FeatureItem>
-                      <FeatureItem>Predictive analytics for efficient budget allocation</FeatureItem>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Meta & Google Ads */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
-              <div className="relative bg-[#0A0A0F] p-8 rounded-lg border border-gray-800 group-hover:border-purple-500 transition-all duration-300">
-                <Share2 className="h-12 w-12 text-purple-500 mb-6" />
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-purple-400 transition-colors">Meta & Google Ads for Health & Wellness Brands</h3>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4 text-purple-400">Meta Ads (Facebook & Instagram)</h4>
-                    <div className="space-y-2">
-                      <FeatureItem>High-Converting Ad Creatives</FeatureItem>
-                      <FeatureItem>Retargeting & Customer Journey Optimization</FeatureItem>
-                      <FeatureItem>AI-Powered Bidding Strategies</FeatureItem>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4 text-purple-400">Google Ads</h4>
-                    <div className="space-y-2">
-                      <FeatureItem>Search Ads for High-Intent Buyers</FeatureItem>
-                      <FeatureItem>YouTube Ads for Education & Conversion</FeatureItem>
-                      <FeatureItem>Display Network Targeting</FeatureItem>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* AI-Enhanced Scaling */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
-              <div className="relative bg-[#0A0A0F] p-8 rounded-lg border border-gray-800 group-hover:border-purple-500 transition-all duration-300">
-                <Brain className="h-12 w-12 text-purple-500 mb-6" />
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-purple-400 transition-colors">AI-Enhanced E-Commerce Scaling</h3>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4 text-purple-400">Smart Technology</h4>
-                    <div className="space-y-2">
-                      <FeatureItem>Predictive Analytics for Smart Budgeting</FeatureItem>
-                      <FeatureItem>AI-Driven Optimization</FeatureItem>
-                      <FeatureItem>Automated Performance Tracking</FeatureItem>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold mb-4 text-purple-400">Growth Focus</h4>
-                    <div className="space-y-2">
-                      <FeatureItem>Unit Economics Optimization</FeatureItem>
-                      <FeatureItem>Profit Margin Enhancement</FeatureItem>
-                      <FeatureItem>Scalable Growth Strategies</FeatureItem>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+      {/* SERVICE 2 */}
+      <motion.div className="bg-[#0A0A0F] rounded-xl border border-gray-800 overflow-hidden">
+        <img
+          src={card2}
+          alt="Meta & Google Ads"
+          className="w-full h-56 object-cover"
+        />
+        <div className="p-8">
+          <Share2 className="text-purple-500 w-10 h-10 mb-4" />
+          <h3 className="text-2xl font-bold mb-4">
+            Meta & Google Ads
+          </h3>
+          <FeatureItem>Facebook & Instagram Ads</FeatureItem>
+          <FeatureItem>YouTube & Search Ads</FeatureItem>
+          <FeatureItem>AI bidding strategies</FeatureItem>
         </div>
-      </section>
+      </motion.div>
+
+      {/* SERVICE 3 */}
+      <motion.div className="bg-[#0A0A0F] rounded-xl border border-gray-800 overflow-hidden md:col-span-2">
+        <img
+          src={card3}
+          alt="AI Scaling"
+          className="w-full h-64 object-cover"
+        />
+        <div className="p-8">
+          <Brain className="text-purple-500 w-10 h-10 mb-4" />
+          <h3 className="text-2xl font-bold mb-4">
+            AI-Driven Scaling
+          </h3>
+          <FeatureItem>Predictive analytics</FeatureItem>
+          <FeatureItem>Profit-first scaling</FeatureItem>
+          <FeatureItem>Automated optimization</FeatureItem>
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Process Section */}
       <section id="process" className="py-20 px-4 relative">
